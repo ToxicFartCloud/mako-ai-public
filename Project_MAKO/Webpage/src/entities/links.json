@@ -1,0 +1,68 @@
+
+{
+  "name": "links",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "title": "Link",
+        "description": "External links management for admin users",
+        "additionalProperties": true,
+        "required": ["title", "url", "type", "isActive", "createdAt"],
+        "properties": {
+          "title": {
+            "bsonType": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "description": "Link display title"
+          },
+          "url": {
+            "bsonType": "string",
+            "pattern": "^https?://",
+            "description": "Valid HTTP/HTTPS URL"
+          },
+          "type": {
+            "bsonType": "string",
+            "enum": ["gofundme", "crypto", "social", "website", "other"],
+            "description": "Link category type"
+          },
+          "description": {
+            "bsonType": "string",
+            "maxLength": 500,
+            "description": "Link description"
+          },
+          "icon": {
+            "bsonType": "string",
+            "description": "Icon name or URL"
+          },
+          "isActive": {
+            "bsonType": "bool",
+            "description": "Link visibility status"
+          },
+          "priority": {
+            "bsonType": "int",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Display priority (higher = first)"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "User who created the link"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last update timestamp"
+          }
+        }
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
