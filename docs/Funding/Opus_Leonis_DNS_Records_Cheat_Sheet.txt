@@ -1,0 +1,107 @@
+Opus Leonis LLC — DNS Records Cheat Sheet for Business Email
+Domain example: opusleonis.com
+
+NOTE: Replace 'opusleonis.com' with your domain. Publish these at your DNS host (registrar or Cloudflare).
+Always use the exact values your provider shows you; the records below are known-good examples.
+
+============================================================
+Option A — Google Workspace (Gmail for Business)
+============================================================
+# MX (5 records)
+Host/Name: @
+Type: MX
+Priority/Value:
+  1   aspmx.l.google.com.
+  5   alt1.aspmx.l.google.com.
+  5   alt2.aspmx.l.google.com.
+ 10   alt3.aspmx.l.google.com.
+ 10   alt4.aspmx.l.google.com.
+
+# SPF (TXT)
+Host: @
+Type: TXT
+Value: "v=spf1 include:_spf.google.com ~all"
+
+# DKIM (TXT) — you will get a selector in Admin console (often 'google')
+Host: google._domainkey
+Type: TXT
+Value: (long public key provided by Google Admin)
+
+# DMARC (TXT)
+Host: _dmarc
+Type: TXT
+Value: "v=DMARC1; p=quarantine; rua=mailto:dmarc@opusleonis.com; adkim=s; aspf=s"
+
+============================================================
+Option B — Zoho Mail
+============================================================
+# MX
+Host: @
+Type: MX
+Priority/Value:
+  10   mx.zoho.com.
+  20   mx2.zoho.com.
+  50   mx3.zoho.com.
+
+# SPF (TXT)
+Host: @
+Type: TXT
+Value: "v=spf1 include:zoho.com ~all"
+
+# DKIM (TXT) — selector created in Zoho (e.g., 'zmail')
+Host: zmail._domainkey
+Type: TXT
+Value: (public key provided by Zoho)
+
+# DMARC (TXT)
+Host: _dmarc
+Type: TXT
+Value: "v=DMARC1; p=quarantine; rua=mailto:dmarc@opusleonis.com; adkim=s; aspf=s"
+
+============================================================
+Option C — Proton Business (Proton Mail)
+============================================================
+# MX
+Host: @
+Type: MX
+Priority/Value:
+  10   mail.protonmail.ch.
+  20   mailsec.protonmail.ch.
+
+# SPF (TXT)
+Host: @
+Type: TXT
+Value: "v=spf1 include:_spf.protonmail.ch ~all"
+
+# DKIM (CNAME) — Proton typically uses CNAMEs per selector (protonmail, protonmail2, protonmail3)
+Host: protonmail._domainkey
+Type: CNAME
+Value: protonmail.domainkey.protonmail.ch.
+Host: protonmail2._domainkey
+Type: CNAME
+Value: protonmail2.domainkey.protonmail.ch.
+Host: protonmail3._domainkey
+Type: CNAME
+Value: protonmail3.domainkey.protonmail.ch.
+
+# DMARC (TXT)
+Host: _dmarc
+Type: TXT
+Value: "v=DMARC1; p=quarantine; rua=mailto:dmarc@opusleonis.com; adkim=s; aspf=s"
+
+============================================================
+Verification & Testing
+============================================================
+1) After adding records, wait for DNS to propagate (often 5–30 minutes, up to 24 hours).
+2) In your mail provider admin console, click “Verify” for domain + DKIM.
+3) Send a test from mike@opusleonis.com to a personal Gmail and reply back.
+4) Check message headers — you should see SPF=PASS, DKIM=PASS, DMARC=PASS.
+5) Keep 2FA enabled on admin accounts; store recovery codes securely.
+
+Aliases to create:
+- hello@opusleonis.com  (general inquiries)
+- quotes@opusleonis.com (vendor quotes and client RFQs)
+- billing@opusleonis.com (invoices, receipts)
+- support@opusleonis.com (customer support)
+
+Tip: Set 'catch-all' to hello@ so stray emails still land somewhere.

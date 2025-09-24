@@ -1,0 +1,67 @@
+Step 1. Prioritize Targets
+
+Here’s a shortlist of programs that fit your situation best:
+
+✅ Low-friction, high-fit
+
+OpenAI – People-First AI Fund
+Apps open now, close Oct 8, 2025. Unrestricted funding for nonprofits/mission-driven AI. If you don’t have a nonprofit set up, you can apply with a fiscal sponsor.
+
+AI Grant (microgrants, $5k–$50k)
+Simple app, no-strings-attached, great for open-source projects like MAKO.
+
+🚀 Accelerators (fast track for solo founders)
+
+a16z SPEEDRUN (SR006)
+Apps close Sept 28, 2025; invests up to $1M in seed funding.
+
+Y Combinator (Winter 2026 batch apps open now)
+Rolling applications, YC has said solo AI founders are viable.
+
+🏛️ Government (slower, larger, more paperwork)
+
+NSF SBIR Phase I (America’s Seed Fund)
+~$275k Phase I; U.S. small business eligibility. Great if you want to register MAKO as an LLC.
+
+DoD AFWERX Open Topic
+Next cycle opens Apr 23, 2025 → closes May 21. Needs “dual-use” framing (civil + defense).
+
+DOE Office of Science FOAs
+For AI in science/energy; may be a stretch fit but worth tracking.
+
+🌐 Web3 / Decentralized
+
+SingularityNET DeepFunding / ASI Alliance Grants
+Milestone-based, up to $100k; good fit if you pitch MAKO as decentralized/open.
+
+Step 2. Prep a Reusable Application Packet
+
+Most applications want the same core pieces:
+
+Executive Summary (1–2 pages) → Problem, Solution (MAKO), Impact.
+
+Technical Plan → What’s novel about your architecture (agents, offline-first, ownership).
+
+Team → You as founder + MAKO “agents” as framework.
+
+Budget → Clear breakdown (like we did for GoFundMe).
+
+Impact → Education, access, community empowerment.
+
+Milestones → 6–12 month deliverables (MVP, pilots, documentation).
+
+Once we write this once, you can reuse + adapt it across programs.
+
+Step 3. Decide Sequence
+
+I’d suggest:
+
+OpenAI People-First Fund (due Oct 8 → urgent).
+
+AI Grant (rolling; quick win possible).
+
+a16z SPEEDRUN (due Sept 28 → big accelerator shot).
+
+YC (submit now, keep refining).
+
+Government (NSF SBIR Phase I → set up LLC first).
